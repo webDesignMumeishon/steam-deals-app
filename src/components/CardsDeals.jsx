@@ -3,8 +3,8 @@ import {Card} from './Card/Card'
 
 export const CardsDeals = ({deals}) => {
     
-    const deal1 = deals[5]
-    console.log(deal1?.title);
+    const deal1 = deals[52]
+    // console.log(deals);
 
     return (
         <div>

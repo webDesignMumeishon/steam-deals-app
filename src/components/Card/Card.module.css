@@ -1,6 +1,6 @@
 .cardContainer{
     width: 23%;
-    padding: 1em .5em;
+    padding: 1.5em .5em;
     color: white;
     left: 20%;
 
@@ -22,9 +22,6 @@
     align-items: center;
 }
 
-.subContainer > img{
-    width: 100%;
-}
 
 .titleWrapper{
     width: 100%;
@@ -58,4 +55,28 @@
 .salePrice{
     font-size: 1.2rem;
     margin-left: 0.3em;
+}
+
+.imgContainer{
+    width: 100%;
+    position: relative;
+}
+.imgContainer > img{
+    width: 100%;
+}
+
+.savings{
+    position: absolute;
+    background-color: red;
+    height: 2.7em;
+    display: grid;
+    align-items: center;
+    right: -1.5em;
+    top: -1.5em;
+    border-radius: 30px;
+}
+
+.savings{
+    padding: 0.5em;
+    font-size: 13px;
 }
