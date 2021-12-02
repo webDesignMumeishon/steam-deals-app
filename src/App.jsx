@@ -17,10 +17,12 @@ function App() {
   //states
   const [deals, setDeals] = useState([])
   const [openCart, setOpenCart] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
   const [dealsInCart, setDealsInCart] = useState([])
 
   useEffect(() => {
-    setDeals(() => fetchInitialSteamDeals )
+    setDeals(() => fetchInitialSteamDeals)
+
   }, [fetchInitialSteamDeals])
 
   const handleInput = (e) => {
@@ -51,10 +53,12 @@ function App() {
   }
 
   const removeFromCart = (gameID) => {
-
     const filteredArr = dealsInCart.filter(deal => deal.gameID !== gameID)
-
     setDealsInCart(() => filteredArr)
+  }
+
+  if(isLoading){
+    return <h1>LOADING</h1>
   }
 
   
