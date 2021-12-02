@@ -2,7 +2,7 @@ import React from 'react'
 import {Card} from '../Card/Card'
 import styles from './CardsDeals.module.css'
 
-export const CardsDeals = ({deals}) => {
+export const CardsDeals = ({deals, addDealToCart}) => {
     
 
     return (
@@ -11,16 +11,14 @@ export const CardsDeals = ({deals}) => {
                 <Card 
                     key = {deal.steamAppID}
                     title={deal.title}
+                    addDealToCart={addDealToCart}
                     dealID = {deal.dealID}
                     storeID = {deal.storeID}
                     gameID = {deal.gameID}
                     salePrice = {deal.salePrice}
                     normalPrice = {deal.normalPrice}
-                    isOnSale = {deal.isOnSale}
                     savings  = {deal.savings}
-                    metacriticScore = {deal.metacriticScore}
                     steamRatingPercent = {deal.steamRatingPercent}
-                    steamRatingCount = {deal.steamRatingCount}
                     dealRating = {deal.dealRating}
                     thumb = {deal.thumb}
                 />

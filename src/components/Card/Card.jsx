@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Card.module.css'
 import { Stars } from '../Stars/Stars'
 
-export const Card = ({title, savings, thumb, steamRatingPercent, salePrice, normalPrice}) => {
+export const Card = ({title, savings, thumb, steamRatingPercent, salePrice, normalPrice, addDealToCart, gameID}) => {
     
     const savingPercentage = Math.round(Number(savings))
 
@@ -30,6 +30,9 @@ export const Card = ({title, savings, thumb, steamRatingPercent, salePrice, norm
                 <span className={styles.salePrice}>${salePrice}</span>
             </button>
 
+            <button className={styles.btnCard} onClick={() => addDealToCart(gameID)}>
+                Add to cart
+            </button>
             </div>
         </div>
     )

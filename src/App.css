@@ -1,4 +1,27 @@
 .containerApp{
     width: 80%;
     margin: auto;
+    position: relative;
+}
+
+.cart-style{
+    transform: scale(2.5);
+    color: white;
+    margin-top: 2%;
+    cursor: pointer;
+}
+
+.icon-wrapper{
+    position: fixed;
+    top: 5%;
+}
+
+.cart-notification{
+    font-size: 20px;
+    position: absolute;
+    color: white;
+    background-color: red;
+    width: 1.2em;
+    text-align: center;
+    border-radius: 20px;
 }
