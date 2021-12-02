@@ -1,0 +1,42 @@
+.form{
+    position: relative;
+    width: 50%;
+    margin: 5% auto 2%;
+}
+
+.inputBox{
+    width: 95%;
+    height: 100%;
+    border: 2px solid #8080802e;
+    font-size: inherit;
+    font-family: sans-serif;
+    color: gray;
+    outline: none;
+    padding: 1rem;
+    background: none;
+}
+
+.inputBox:hover{
+    border-color: white;
+}
+
+.form label{
+    position: absolute;
+    left: 1rem;
+    top: 0.5rem;
+    padding: 0 0.5rem;
+    font-size: 1.5rem;
+    cursor: text;
+    color: white;
+    background-color: #0a0a23;
+    transition: top 200ms ease-in,
+      left 200ms ease-in,
+      font-size 200ms ease-in
+}
+
+.inputBox:focus ~ .labelForm,
+.inputBox:not(:placeholder-shown).inputBox:not(:focus) ~ .labelForm {
+  top: -0.5rem;
+  font-size: .8rem !important;
+  left: .8rem;
+}

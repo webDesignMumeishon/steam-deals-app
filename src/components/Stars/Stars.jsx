@@ -4,9 +4,8 @@ import styles from './Stars.module.css'
 
 export const Stars = ({rating}) => {
 
-    const numberOfStars = Math.round(rating/20)
-    console.log(numberOfStars);
 
+    const numberOfStars = Math.round(rating/20)
     const stars = Array(5).fill(0)
 
     const colors = {
@@ -24,7 +23,6 @@ export const Stars = ({rating}) => {
                     color = {index < numberOfStars ? colors.orange : colors.gray}
                     />
                 )
-                
             })}
         </div>
     )
