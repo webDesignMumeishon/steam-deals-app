@@ -4,13 +4,18 @@ import styles from './Card.module.css'
 export const Card = ({title, savings, thumb, steamRatingPercent, salePrice, normalPrice}) => {
     return (
         <div className={styles.cardContainer}>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat iste assumenda
-             consequuntur libero! Veniam rerum dolores, magnam ipsam facilis pariatur fugiat
-              quidem nam incidunt nobis ducimus porro! Ullam, accusamus mollitia!
-            {/* <div style={styles.subContainer}>
-                adsdsadsadsdasd
-                asdsadas
-            </div> */}
+            <div className={styles.subContainer}>
+
+            <img src={thumb} alt="dealImage" />
+            <div className={styles.titleWrapper}>
+                <p className={styles.title}>{title}</p>
+            </div>
+            <p className={styles.steamReview}>Steam Review</p>
+            <button className={styles.btn}>
+                <span className={styles.normalPrice}>${normalPrice}</span> 
+                <span className={styles.salePrice}>${salePrice}</span>
+            </button>
+            </div>
         </div>
     )
 }

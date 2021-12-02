@@ -3,7 +3,7 @@ import {Card} from './Card/Card'
 
 export const CardsDeals = ({deals}) => {
     
-    const deal1 = deals[0]
+    const deal1 = deals[5]
     console.log(deal1?.title);
 
     return (

@@ -1,50 +1,61 @@
 .cardContainer{
-    width: 20%;
-    /* height: 20vh; */
-    padding: 1em;
-    margin-top: 12%;
-    margin-left: 12%;
+    width: 23%;
+    padding: 1em .5em;
     color: white;
     left: 20%;
 
     background: linear-gradient(#0a0a23, #0a0a23) padding-box,
     linear-gradient(356deg, #ff93ac, #fc3468, #ff6289) border-box;
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
     border-color: transparent;
     border-radius: 15px;
-
 }
 
-/* .cardContainer::before{
-    content: " ";
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background-color: #fff;
-    z-index: -1;
-}
-
-.cardContainer::after{
-    content: " ";
-    position: absolute;
-    top: -1px;
-    left: -1px;
-    right: -1px;
-    bottom: -1px;
-    background-color: #fff;
-    z-index: -2;
-    filter: blur(3px);
-}
-
-.cardContainer::before,
-.cardContainer::after{
-    background: linear-gradient(356deg, #ff93ac, #fc3468, #ff6289);
-
-} */
+/*word-break: break-all; */
 
 .subContainer{
+    width: 80%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+}
 
+.subContainer > img{
+    width: 100%;
+}
+
+.titleWrapper{
+    width: 100%;
+}
+
+.title{
+    width: 100%;
+    display: block;
+    text-align: inherit;
+}
+
+.steamReview{
+    margin: 1em auto 0.5em;
+}
+
+.btn{
+    width: 100%;
+    background: none;
+    border: none;
+    background: linear-gradient(150deg, #fb9101a1, #e25276c9, #550655);
+    padding: 0.4em;
+    border-radius: 0.5em;
+    color: white;
+    cursor: pointer;
+}
+
+.normalPrice{
+    text-decoration: line-through;
+}
+
+.salePrice{
+    font-size: 1.2rem;
+    margin-left: 0.3em;
 }
