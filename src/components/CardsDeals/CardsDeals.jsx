@@ -5,7 +5,6 @@ import { Message } from '../Message/Message'
 
 export const CardsDeals = ({deals, addDealToCart}) => {
     
-    
     return (
         <div className={styles.container}>
             {deals.length > 0 ? deals.map(deal => ( 

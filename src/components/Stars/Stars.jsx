@@ -2,7 +2,7 @@ import React from 'react'
 import { FaStar } from 'react-icons/fa';
 import styles from './Stars.module.css'
 
-export const Stars = ({rating}) => {
+const Stars = ({rating}) => {
 
 
     const numberOfStars = Math.round(rating/20)
@@ -27,3 +27,5 @@ export const Stars = ({rating}) => {
         </div>
     )
 }
+
+export default React.memo(Stars)

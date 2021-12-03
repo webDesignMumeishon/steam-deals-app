@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Card.module.css'
-import { Stars } from '../Stars/Stars'
+import Stars  from '../Stars/Stars'
 
 export const Card = ({title, savings, thumb, steamRatingPercent, salePrice, normalPrice, addDealToCart, gameID}) => {
     
