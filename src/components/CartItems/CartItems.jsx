@@ -18,7 +18,7 @@ export const CartItems = ({open, handleCartWindow, deals, removeFromCart}) => {
                     <h1>Your Shopping Cart</h1>
 
                     {deals.length > 0 && deals.map(d => (
-                        <div className={styles.dealWrapper}>
+                        <div className={styles.dealWrapper} key={d.gameID}>
                             <p className={styles.title}>{d.title}</p>
                             <p>${d.salePrice}</p>
                             <button className={styles.btn} onClick={() => removeFromCart(d.gameID)}>x</button>

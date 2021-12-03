@@ -1,33 +1,37 @@
 import './App.css';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {FetchData} from './components/hooks/FetchData'
 import { CardsDeals } from './components/CardsDeals/CardsDeals';
-import {SearchBar} from './components/SearchBar/SearchBar'
-import {Message} from './components/Message/Message'
+import SearchBar from './components/SearchBar/SearchBar'
 import {CartItems} from './components/CartItems/CartItems'
 import { AiOutlineShoppingCart } from 'react-icons/ai';
-import userEvent from '@testing-library/user-event';
-
-
+import Loader from "react-loader-spinner";
 
 function App() {
-
   const fetchInitialSteamDeals = FetchData()
-
+  
   //states
   const [deals, setDeals] = useState([])
   const [openCart, setOpenCart] = useState(false)
-  // const [isLoading, setIsLoading] = useState(false)
   const [dealsInCart, setDealsInCart] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
+
 
   useEffect(() => {
-    setDeals(() => fetchInitialSteamDeals)
+    setDeals(() => fetchInitialSteamDeals.data)
+
+    const timer = setTimeout(() => {
+      setIsLoading(() => fetchInitialSteamDeals.loading)
+    }, 1500)
+
+    return () => clearTimeout(timer);
 
   }, [fetchInitialSteamDeals])
 
+
   const handleInput = (e) => {
     const nameOfGame = e.target.value 
-    const filteredGames = fetchInitialSteamDeals.filter(game => game.title.toLowerCase().includes(nameOfGame))
+    const filteredGames = fetchInitialSteamDeals.data.filter(game => game.title.toLowerCase().includes(nameOfGame))
     setDeals(() => filteredGames)
   }
 
@@ -35,9 +39,8 @@ function App() {
     setOpenCart((prev) => !prev)
   }
 
-
-  const addDealToCart = (gameID) => {
-    const [newDealToAdd] = fetchInitialSteamDeals.filter(deal => deal.gameID === gameID)
+  const addDealToCart = useCallback((gameID) => {
+    const [newDealToAdd] = fetchInitialSteamDeals.data.filter(deal => deal.gameID === gameID)
     const checkIfIsInCart = dealsInCart.find(deal => deal.gameID === newDealToAdd.gameID)
 
     if(checkIfIsInCart){
@@ -50,18 +53,13 @@ function App() {
         newDealToAdd
       ]
     })
-  }
+  }, [dealsInCart, fetchInitialSteamDeals.data])
 
-  const removeFromCart = (gameID) => {
+  const removeFromCart = useCallback((gameID) => {
     const filteredArr = dealsInCart.filter(deal => deal.gameID !== gameID)
     setDealsInCart(() => filteredArr)
-  }
+  }, [dealsInCart])
 
-  if(isLoading){
-    return <h1>LOADING</h1>
-  }
-
-  
   return (
     <div className="containerApp">
 
@@ -78,8 +76,12 @@ function App() {
         removeFromCart={removeFromCart} 
       />
 
-      {deals.length === 0 ? 
-        <Message/> : 
+      {isLoading 
+        ?
+        <div className="loader-spiner">
+          <Loader type="BallTriangle" color="#00BFFF" height={80} width={80} /> 
+        </div> 
+        :
         <CardsDeals 
           deals={deals}
           addDealToCart={addDealToCart}

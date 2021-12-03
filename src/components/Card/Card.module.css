@@ -108,3 +108,15 @@
     background-color: white;
     color: black;
 }
+
+@media screen and (max-width: 1000px) {
+    .cardContainer{
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .cardContainer{
+        width: 100%;
+    }
+}

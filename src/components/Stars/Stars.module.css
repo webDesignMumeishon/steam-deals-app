@@ -1,5 +1,6 @@
 .container{
     margin: 0 0 1em;
+    text-align: center;
 }
 
 .container > svg{

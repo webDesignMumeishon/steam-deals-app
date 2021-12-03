@@ -25,3 +25,8 @@
     text-align: center;
     border-radius: 20px;
 }
+
+.loader-spiner{
+    text-align: center;
+    margin-top: 10%;
+}

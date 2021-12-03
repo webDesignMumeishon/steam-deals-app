@@ -1,7 +1,8 @@
 import React from 'react'
 import styles from './SearchBar.module.css'
 
-export const SearchBar = ({handleInput}) => {
+
+const SearchBar = ({handleInput}) => {
     return (
         <div className={styles.form}>
             <input placeholder=" " onChange={handleInput} id="up" name="up" type="text" className={styles.inputBox}/>
@@ -9,3 +10,5 @@ export const SearchBar = ({handleInput}) => {
         </div>
     )
 }
+
+export default React.memo(SearchBar)

@@ -1,13 +1,14 @@
 import React from 'react'
 import {Card} from '../Card/Card'
 import styles from './CardsDeals.module.css'
+import { Message } from '../Message/Message'
 
 export const CardsDeals = ({deals, addDealToCart}) => {
     
-
+    
     return (
         <div className={styles.container}>
-            {deals.length > 0 && deals.map(deal => ( 
+            {deals.length > 0 ? deals.map(deal => ( 
                 <Card 
                     key = {deal.steamAppID}
                     title={deal.title}
@@ -22,27 +23,10 @@ export const CardsDeals = ({deals, addDealToCart}) => {
                     dealRating = {deal.dealRating}
                     thumb = {deal.thumb}
                 />
-            ))}
+            )) :
+            <Message/>
+            }
 
-        {/* {deals.length > 0 &&
-            <Card 
-            title={deal1.title}
-            dealID = {deal1.dealID}
-            storeID = {deal1.storeID}
-            gameID = {deal1.gameID}
-            salePrice = {deal1.salePrice}
-            normalPrice = {deal1.normalPrice}
-            isOnSale = {deal1.isOnSale}
-            savings  = {deal1.savings}
-            metacriticScore = {deal1.metacriticScore}
-            steamRatingPercent = {deal1.steamRatingPercent}
-            steamRatingCount = {deal1.steamRatingCount}
-            steamAppID = {deal1.steamAppID}
-            dealRating = {deal1.dealRating}
-            thumb = {deal1.thumb}
-            />
-        } */}
-       
         </div>
     )
 }
