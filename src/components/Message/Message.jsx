@@ -6,11 +6,11 @@ const titleStyling = {
     color: "white",
 }
 
-export const Message = ({loading}) => {
+export const Message = () => {
 
     return (
         <div>
-            <h1 style={titleStyling}>{loading ? <h1>Loading...</h1> : <h1>No Games Were Found</h1>}</h1>
+            <h1 style={titleStyling}>No Games Were Found</h1>
         </div>
     )
 }
