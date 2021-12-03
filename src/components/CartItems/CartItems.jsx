@@ -14,7 +14,7 @@ export const CartItems = ({open, handleCartWindow, deals, removeFromCart}) => {
         return (
             <div className={styles.cartContainer} onClick={() => handleCartWindow()}>
                 <div onClick={handleContainerClick} className={styles.cartSubContainer}>
-
+                    <button onClick={() => handleCartWindow()} className={styles.exitBtn}>X</button>
                     <h1>Your Shopping Cart</h1>
 
                     {deals.length > 0 && deals.map(d => (
